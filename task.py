@@ -70,14 +70,21 @@ def Subpeptides_Count_Problem(n):
     return(n * (n - 1))
 
 #task 2.4
-def Generating_Theoretical_Spectrum_Problem(Peptide):
-    dictionary = {'G': 57, 'A': 71, 'S': 87, 'P': 97, 'V': 99, 'T': 101, 'C': 103, 'I': 113, 'L': 113, 'N': 114, 'D': 115, 'K': 128, 'Q': 128, 'E': 129, 'M': 131, 'H': 137, 'F': 147, 'R': 156, 'Y': 163, 'W': 186}
+def Generating_Theoretical_Spectrum_Problem(Peptide, cyclic=True):
+    dictionary = {'G': 57, 'A': 71, 'S': 87, 'P': 97, 'V': 99, 'T': 101, 'C': 103, 'I': 113, 'L': 113, 'N': 114,
+                  'D': 115, 'K': 128, 'Q': 128, 'E': 129, 'M': 131, 'H': 137, 'F': 147, 'R': 156, 'Y': 163, 'W': 186}
 
-    elem = [Peptide]
-    Cyclic_peptide = Peptide * 2
-    for i in range(len(Peptide)): #step
-        for j in range(1,len(Peptide)): #shift
-            elem.append(Cyclic_peptide[i : i + j])
+    if cyclic == True:
+        elem = [Peptide]
+        Cyclic_peptide = Peptide * 2
+        for i in range(len(Peptide)): #step
+            for j in range(1,len(Peptide)): #shift
+                elem.append(Cyclic_peptide[i : i + j])
+    else:
+        elem = []
+        for i in range(len(Peptide)):
+            for j in range(1,len(Peptide) - i + 1):
+                elem.append(Peptide[i : i + j])
 
     answer = [0]
     for i in range(len(elem)):
@@ -88,3 +95,107 @@ def Generating_Theoretical_Spectrum_Problem(Peptide):
     answer.sort()
 
     return(answer)
+
+#task 3.1
+def Cyclopeptide_Sequencing_Problem(Spectrum):
+    Theory = {'G': 57, 'A': 71, 'S': 87, 'P': 97, 'V': 99, 'T': 101, 'C': 103, 'I': 113, 'L': 113, 'N': 114,
+                  'D': 115, 'K': 128, 'Q': 128, 'E': 129, 'M': 131, 'H': 137, 'F': 147, 'R': 156, 'Y': 163, 'W': 186}
+
+
+    Peptides = []
+    for Peptide in Theory.keys():
+        if Theory[Peptide] in Spectrum:
+            Peptides.append(Peptide)
+
+    Peptides_result = []
+    while Peptides != []:
+        Peptide = Peptides.pop(0)
+
+        for next_peptide in Theory.keys():
+            Expand_peptide = Peptide + next_peptide
+            Cyclospectrum = Generating_Theoretical_Spectrum_Problem(Expand_peptide)
+            Nonsyclospectrum = Generating_Theoretical_Spectrum_Problem(Expand_peptide, False)[:-1]
+            if Cyclospectrum[-1] == Spectrum[-1]:
+                if Cyclospectrum == Spectrum:
+                    Peptides_result.append(Expand_peptide)
+            elif [mass for mass in Cyclospectrum[:-1] if mass not in Spectrum] == []:
+                for mass in Spectrum:
+                    if mass in Nonsyclospectrum:
+                        Nonsyclospectrum.remove(mass)
+                if Nonsyclospectrum == []:
+                    Peptides.append(Expand_peptide)
+
+    result = []
+    for Peptide in Peptides_result:
+        mass = []
+        for c in Peptide:
+            mass.append(Theory[c])
+        if mass not in result:
+            result.append(mass)
+
+#task 3.2
+def Cyclopeptide_Scoring_Problem(Peptide, Spectrum, cyclic=True):
+    Theory_spectrum = Generating_Theoretical_Spectrum_Problem(Peptide, cyclic=cyclic)
+
+    score = 0
+    Same_mass = list(set(Theory_spectrum) & set(Spectrum))
+    for mass in Same_mass:
+        score += min(Theory_spectrum.count(mass), Spectrum.count(mass))
+
+    return(score)
+
+#task 3.3
+def Trim(Leaderboard, Spectrum, N):
+    dict_pepide_score = dict()
+    for Peptide in Leaderboard:
+        dict_pepide_score[Peptide] = Cyclopeptide_Scoring_Problem(Peptide, Spectrum, False)
+
+    sorted_dict_pepide_score = sorted(dict_pepide_score.items(), key=lambda x: x[1], reverse=True)
+
+    num = N
+    if num < len(sorted_dict_pepide_score):
+        while sorted_dict_pepide_score[num - 1][1] == sorted_dict_pepide_score[num][1]:
+            num += 1
+            if num == len( sorted_dict_pepide_score):
+                break
+    else:
+        num = len(sorted_dict_pepide_score)
+
+    Leaderboard.clear()
+    trim_dict_pepide_score = sorted_dict_pepide_score[:num][:]
+    for elem in trim_dict_pepide_score:
+        Leaderboard.add(elem[0])
+
+    return Leaderboard
+
+def Expand(Leaderboard):
+    dict = {'G': 57, 'A': 71, 'S': 87, 'P': 97, 'V': 99, 'T': 101, 'C': 103, 'I': 113, 'L': 113, 'N': 114, 'D': 115, 'K': 128, 'Q': 128, 'E': 129, 'M': 131, 'H': 137, 'F': 147, 'R': 156, 'Y': 163, 'W': 186}
+
+    result = set()
+    for peptide in dict:
+        for elem in Leaderboard:
+            new_peptide = elem + peptide
+            result.add(new_peptide)
+    return result
+
+def Leaderboard_Cyclopeptide_Sequencing(Spectrum, N):
+    dict = {'G': 57, 'A': 71, 'S': 87, 'P': 97, 'V': 99, 'T': 101, 'C': 103, 'I': 113, 'L': 113, 'N': 114, 'D': 115, 'K': 128, 'Q': 128, 'E': 129, 'M': 131, 'H': 137, 'F': 147, 'R': 156, 'Y': 163, 'W': 186}
+    Leaderboard = {''}
+    LeaderPeptide = ''
+    while len(Leaderboard) !=0:
+        Leaderboard = Expand(Leaderboard)
+        leaderboard_temp = Leaderboard.copy()
+        for peptide in Leaderboard:
+            pep_spect = Generating_Theoretical_Spectrum_Problem(peptide, False)
+            if pep_spect[-1] == Spectrum[-1]:
+                if Cyclopeptide_Scoring_Problem(peptide, Spectrum, False) > Cyclopeptide_Scoring_Problem(LeaderPeptide, Spectrum, False):
+                    LeaderPeptide = peptide
+            elif int(pep_spect[-1]) > int(Spectrum[-1]):
+                leaderboard_temp.remove(peptide)
+        leaderboard_temp = Trim(leaderboard_temp, Spectrum, N)
+        Leaderboard = leaderboard_temp
+
+    result = []
+    for char in LeaderPeptide:
+        result.append(dict[char])
+    return result
