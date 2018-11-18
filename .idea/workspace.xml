@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3939f79-f22c-48cc-867f-c58b74367efb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/UNN-Bioinformatics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UNN-Bioinformatics.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/task.py" afterDir="false" />
     </list>
@@ -17,21 +15,22 @@
     <session id="-1193138289">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4744" />
+          <entry key="py" value="7372" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="4744" />
+          <entry key="Python" value="7372" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+            <state relative-caret-position="765">
+              <caret line="264" lean-forward="true" selection-start-line="264" selection-end-line="264" />
               <folding>
                 <element signature="e#59#215#0" />
                 <element signature="e#269#638#0" />
@@ -60,13 +59,20 @@
                 <element signature="e#895#1663#0" />
                 <element signature="e#1722#2124#0" />
                 <element signature="e#2174#2193#0" />
-                <element signature="e#2276#3081#0" />
-                <element signature="e#3140#4530#0" />
-                <element signature="e#4612#4882#0" />
-                <element signature="e#4960#5691#0" />
-                <element signature="e#5722#6097#0" />
-                <marker date="1542026089937" expanded="true" signature="4629:4908" ph="..." />
-                <marker date="1542026089937" expanded="false" signature="6151:7176" ph="..." />
+                <element signature="e#2276#3099#0" />
+                <element signature="e#3162#4552#0" />
+                <element signature="e#4634#4907#0" />
+                <element signature="e#4959#5690#0" />
+                <element signature="e#5721#6096#0" />
+                <element signature="e#6156#7176#0" />
+                <element signature="e#7234#7358#0" />
+                <element signature="e#7394#7599#0" />
+                <element signature="e#7643#7894#0" />
+                <element signature="e#7942#8524#0" />
+                <element signature="e#8576#8990#0" />
+                <element signature="e#9055#9381#0" />
+                <marker date="1542542752804" expanded="true" signature="4629:4908" ph="..." />
+                <marker date="1542542752804" expanded="true" signature="8612:8964" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,7 +140,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecg_classification" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -149,7 +155,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.task">
     <configuration name="task" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UNN-Bioinformatics" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,8 +204,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.task" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -229,13 +235,13 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497191" visible="true" weight="0.19196428" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497191" visible="true" weight="0.19196428" />
       <window_info id="Structure" order="1" sideWeight="0.502809" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25204584" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44844517" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22913256" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3666121" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -254,36 +260,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../ecg_classification/visualization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-153" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../ecg_classification/generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="68" column="93" selection-start-line="68" selection-start-column="93" selection-end-line="68" selection-end-column="93" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#2360#3642#0" />
-            <element signature="e#3734#4859#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="96" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+        <state relative-caret-position="765">
+          <caret line="264" lean-forward="true" selection-start-line="264" selection-end-line="264" />
           <folding>
             <element signature="e#59#215#0" />
             <element signature="e#269#638#0" />
@@ -291,13 +282,20 @@
             <element signature="e#895#1663#0" />
             <element signature="e#1722#2124#0" />
             <element signature="e#2174#2193#0" />
-            <element signature="e#2276#3081#0" />
-            <element signature="e#3140#4530#0" />
-            <element signature="e#4612#4882#0" />
-            <element signature="e#4960#5691#0" />
-            <element signature="e#5722#6097#0" />
-            <marker date="1542026089937" expanded="true" signature="4629:4908" ph="..." />
-            <marker date="1542026089937" expanded="false" signature="6151:7176" ph="..." />
+            <element signature="e#2276#3099#0" />
+            <element signature="e#3162#4552#0" />
+            <element signature="e#4634#4907#0" />
+            <element signature="e#4959#5690#0" />
+            <element signature="e#5721#6096#0" />
+            <element signature="e#6156#7176#0" />
+            <element signature="e#7234#7358#0" />
+            <element signature="e#7394#7599#0" />
+            <element signature="e#7643#7894#0" />
+            <element signature="e#7942#8524#0" />
+            <element signature="e#8576#8990#0" />
+            <element signature="e#9055#9381#0" />
+            <marker date="1542542752804" expanded="true" signature="4629:4908" ph="..." />
+            <marker date="1542542752804" expanded="true" signature="8612:8964" ph="..." />
           </folding>
         </state>
       </provider>

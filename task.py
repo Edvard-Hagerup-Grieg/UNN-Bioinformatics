@@ -199,3 +199,82 @@ def Leaderboard_Cyclopeptide_Sequencing(Spectrum, N):
     for char in LeaderPeptide:
         result.append(dict[char])
     return result
+
+#task 4.1
+def Mismatches_Count(Pattern1, Pattern2):
+    count = 0
+    for i in range(len(Pattern1)):
+        if Pattern1[i] != Pattern2[i]:
+            count += 1
+
+    return count
+
+def Peptidew_Expand(Peptide):
+    Elements = ['A', 'T', 'G', 'C']
+
+    result = set()
+    for peptide in Peptide:
+        for elem in Elements:
+            new_peptide = peptide + elem
+            result.add(new_peptide)
+
+    return result
+
+def Patterns_Difference(Peptide1, d):
+    Peptides = {''}
+    for i in range(len(Peptide1)):
+        Peptides = Peptidew_Expand(Peptides)
+
+    result = set()
+    for Peptide2 in Peptides:
+        if Mismatches_Count(Peptide1, Peptide2) <= d:
+            result.add(Peptide2)
+
+    return result
+
+def Motif_Enumeration_Problem(DNA, k, d):
+    Patterns = set()
+    for str in DNA:
+        for i in range(len(str) - k + 1):
+            Pattern = str[i:i+k]
+            Patterns_new = Patterns_Difference(Pattern, d)
+            add = False
+            for Pattern_new in Patterns_new:
+                for str_check in DNA:
+                    add = False
+                    for j in range(len(str_check) - k + 1):
+                        if Mismatches_Count(Pattern_new, str_check[j:j+k]) <= d:
+                            add = True
+                    if add == False: break
+                if add: Patterns.add(Pattern_new)
+
+#task 4.2
+def Hamming_Distance(Pattern, DNA):
+    HEMMING_DIST = 0
+    # Patterns = []
+    for str in range(len(DNA)):
+        MIN_SCORE = 100000
+        for i in range(len(DNA[0]) - len(Pattern) + 1):
+            score = Mismatches_Count(Pattern, DNA[str][i:i+len(Pattern)])
+            if score < MIN_SCORE:
+                MIN_SCORE = score
+                # Patterns.append(DNA[str][i:i+len(Pattern)])
+        HEMMING_DIST += MIN_SCORE
+
+    return HEMMING_DIST
+
+def Median_String_Problem(k, DNA):
+    distance = 100000
+    Median = ''
+
+    Patterns = {''}
+    for i in range(k):
+        Patterns = Peptidew_Expand(Patterns)
+
+    for Pattern in Patterns:
+        distance_new = Hamming_Distance(Pattern, DNA)
+        if distance > distance_new:
+            distance = distance_new
+            Median = Pattern
+
+    return Median
