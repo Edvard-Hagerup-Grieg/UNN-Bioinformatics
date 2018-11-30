@@ -15,70 +15,40 @@
     <session id="-1193138289">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.29" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7372" />
+          <entry key="py" value="9825" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="7372" />
+          <entry key="Python" value="9825" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/task.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="264" lean-forward="true" selection-start-line="264" selection-end-line="264" />
-              <folding>
-                <element signature="e#59#215#0" />
-                <element signature="e#269#638#0" />
-                <element signature="e#691#841#0" />
-                <element signature="e#895#1663#0" />
-                <element signature="e#1722#2124#0" />
-                <element signature="e#2174#2193#0" />
-                <element signature="e#2276#3099#0" />
-                <element signature="e#3162#4552#0" />
-                <element signature="e#4634#4907#0" />
-                <element signature="e#4959#5690#0" />
-                <element signature="e#5721#6096#0" />
-                <element signature="e#6156#7176#0" />
-                <element signature="e#7234#7358#0" />
-                <element signature="e#7394#7599#0" />
-                <element signature="e#7643#7894#0" />
-                <element signature="e#7942#8524#0" />
-                <element signature="e#8576#8990#0" />
-                <element signature="e#9055#9381#0" />
-                <marker date="1542542752804" expanded="true" signature="4629:4908" ph="..." />
-                <marker date="1542542752804" expanded="true" signature="8612:8964" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,11 +65,12 @@
       <list>
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/task.py" />
+        <option value="$PROJECT_DIR$/../ecg_segmentation/dataset.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="676" />
+    <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -125,6 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,11 +108,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecg_classification" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecg_segmentation" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -156,6 +127,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.task">
+    <configuration name="dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UNN-Bioinformatics" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ecg_segmentation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ecg_segmentation/dataset.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="task" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UNN-Bioinformatics" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -201,10 +193,12 @@
     <list>
       <item itemvalue="Python.task" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.dataset" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.task" />
+        <item itemvalue="Python.dataset" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -233,14 +227,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497191" visible="true" weight="0.19196428" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.497191" visible="true" weight="0.011904762" />
       <window_info id="Structure" order="1" sideWeight="0.502809" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22913256" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3207856" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3666121" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -271,10 +264,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/../Summary-CNN/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1530" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ecg_segmentation/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="264" lean-forward="true" selection-start-line="264" selection-end-line="264" />
+        <state relative-caret-position="186">
+          <caret line="326" column="29" selection-start-line="326" selection-start-column="29" selection-end-line="326" selection-end-column="29" />
           <folding>
             <element signature="e#59#215#0" />
             <element signature="e#269#638#0" />
@@ -288,14 +296,25 @@
             <element signature="e#4959#5690#0" />
             <element signature="e#5721#6096#0" />
             <element signature="e#6156#7176#0" />
-            <element signature="e#7234#7358#0" />
-            <element signature="e#7394#7599#0" />
             <element signature="e#7643#7894#0" />
             <element signature="e#7942#8524#0" />
             <element signature="e#8576#8990#0" />
-            <element signature="e#9055#9381#0" />
-            <marker date="1542542752804" expanded="true" signature="4629:4908" ph="..." />
-            <marker date="1542542752804" expanded="true" signature="8612:8964" ph="..." />
+            <element signature="e#9031#9378#0" />
+            <element signature="e#10989#11525#0" />
+            <element signature="e#9811#10287#0" />
+            <element signature="e#10313#10554#0" />
+            <element signature="e#10649#11179#0" />
+            <marker date="1543326595717" expanded="true" signature="4629:4908" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ecg_classification/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="100" column="32" lean-forward="true" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -277,4 +277,102 @@ def Median_String_Problem(k, DNA):
             distance = distance_new
             Median = Pattern
 
-    return Median
+    #return Median
+    return distance
+
+#task 5.1
+def Profile_most_Probable_k_mer_Problem(Text, k, Profile):
+    Profile_string = {'A':0, 'C':1, 'G':2, 'T':3}
+
+    Pattern = ""
+    MAX = -1
+    for i in range(len(Text) - k + 1):
+        tmp = 1.
+        for j in range(k):
+            tmp *= Profile[Profile_string[Text[i+j]]][j]
+        if tmp > MAX:
+            Pattern = Text[i:i+k]
+            MAX = tmp
+
+    return Pattern
+
+#task 5.2
+def Profile_Update(Motifs):
+    Profile_string = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
+    Profile = [[0] * len(Motifs[0]),[0] * len(Motifs[0]),[0] * len(Motifs[0]),[0] * len(Motifs[0])]
+
+    for prof_string in Profile_string.keys():
+        for i in range(len(Motifs[0])):
+            sum = Profile[Profile_string[prof_string]][i]
+            for string in range(len(Motifs)):
+                if Motifs[string][i] == prof_string:
+                    sum += 1
+            Profile[Profile_string[prof_string]][i] = sum / len(Motifs)
+
+    return Profile
+
+def Score(Profile):
+    Score = 0
+    for i in range(len(Profile[0])):
+        MAX = 0
+        for string in Profile:
+            if string[i] > MAX:
+                MAX = string[i]
+
+        Score += (1. - MAX) * len(Profile)
+        #Score += MAX
+
+    return Score
+
+def Greedy_Motif_Search(k, DNA):
+    BestMotifs = []
+    for string in DNA:
+        BestMotifs.append(string[:k])
+
+    for i in range(len(DNA[0]) - k + 1):
+        Motifs = []
+        Motifs.append(DNA[0][i:i+k])
+        Profile = Profile_Update([Motifs[0]])
+
+        for string in range(1,len(DNA)):
+            Motifs.append(Profile_most_Probable_k_mer_Problem(DNA[string], k, Profile))
+            Profile = Profile_Update(Motifs)
+
+        if Score(Profile_Update(Motifs)) < Score(Profile_Update(BestMotifs)):
+            BestMotifs = Motifs
+
+    return BestMotifs
+
+#task 5.3
+def Profile_Update_with_pseudocounts(Motifs):
+    Profile_string = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
+    Profile = [[1] * len(Motifs[0]),[1] * len(Motifs[0]),[1] * len(Motifs[0]),[1] * len(Motifs[0])]
+
+    for prof_string in Profile_string.keys():
+        for i in range(len(Motifs[0])):
+            sum = Profile[Profile_string[prof_string]][i]
+            for string in range(len(Motifs)):
+                if Motifs[string][i] == prof_string:
+                    sum += 1
+            Profile[Profile_string[prof_string]][i] = sum / len(Motifs)
+
+    return Profile
+
+def Greedy_Motif_Search_with_pseudocounts(k, DNA):
+    BestMotifs = []
+    for string in DNA:
+        BestMotifs.append(string[:k])
+
+    for i in range(len(DNA[0]) - k + 1):
+        Motifs = []
+        Motifs.append(DNA[0][i:i+k])
+        Profile = Profile_Update_with_pseudocounts([Motifs[0]])
+
+        for string in range(1,len(DNA)):
+            Motifs.append(Profile_most_Probable_k_mer_Problem(DNA[string], k, Profile))
+            Profile = Profile_Update_with_pseudocounts(Motifs)
+
+        if Score(Profile_Update(Motifs)) < Score(Profile_Update(BestMotifs)):
+            BestMotifs = Motifs
+
+    return BestMotifs
